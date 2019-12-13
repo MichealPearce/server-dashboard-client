@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Server Dashboard Client
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and pairs with [Server Dashboard](https://github.com/MichealPearce/server-dashboard).
 
 ## Available Scripts
 

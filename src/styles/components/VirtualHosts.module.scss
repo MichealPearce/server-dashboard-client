@@ -1,0 +1,36 @@
+@import '../sassy';
+
+.hostList {
+
+    @include flex(row, space-around);
+    flex-wrap: wrap;
+    width: 100%;
+
+    margin: 1em 0px;
+
+    .vhost {
+        
+        width: 30%;
+        padding: 1em;
+        border: 1px solid black;
+
+        margin-right: 1em;
+        margin-bottom: 2em;
+        
+        border-radius: 5px;
+
+        .detail {
+            @include flex(row, flex-start, center);
+            padding: 5px 0px;
+            border-top: 1px solid black;
+            h4 { width: 40%; }
+            span { width: 60%; }
+            h4, span {
+                white-space: pre-wrap;
+                overflow-wrap: break-word;
+            }
+        }
+
+    }
+
+}

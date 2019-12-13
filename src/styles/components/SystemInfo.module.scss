@@ -1,0 +1,133 @@
+@import '../sassy';
+
+.systeminfo {
+    .asideLeft {
+        flex-basis: 40%;
+    }
+    .asideRight {
+        flex-basis: 60%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .systeminfo {
+        
+        @include flex(column);
+
+        & > * { margin: 1rem 0px; }
+        .asideLeft, .asideRight { flex-basis: auto; width: 100%; }
+
+    }
+}
+
+.memory {
+
+    @include inline-flex(column);
+    width: 100%;
+
+    .details { @include flex(row, space-between, center); }
+
+}
+
+.group {
+
+    border: 1px solid rgb(211, 211, 211);
+    margin: 1rem 0px;
+
+    //border-radius: 10px;
+    transition: box-shadow 0.25s;
+
+    &:first-of-type { margin-top: 0px; }
+    &:last-of-type { margin-bottom: 0px; }
+
+    &:hover { box-shadow: 0px 2px 5px rgba(#000, 0.10) }
+
+}
+
+.storage {
+
+    @include inline-flex(column);
+    width: 100%;
+
+    .group {
+        @include flex(row, space-between, center);
+        padding: 1rem;
+
+        .name, .type, .bar 
+        { flex-basis: 25%; }
+    
+        .name {
+            margin-right: 1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .stats {
+            @include flex(row);
+            flex: 1; padding-right: 1rem;
+            white-space: nowrap;
+        }
+
+
+    }
+
+}
+
+.network {
+
+    width: 100%;
+
+    .group {
+
+        @include flex(column);
+        padding: 1rem;
+        border: 1px solid rgb(211, 211, 211);
+        margin: 1rem 0px;
+        //border-radius: 10px;
+        transition: box-shadow 0.25s;
+
+        &:first-of-type { margin-top: 0px; }
+        &:last-of-type { margin-bottom: 0px; }
+
+        .name { margin-right: 1rem; }
+
+        .details {
+            @include flex(row, flex-start, center);
+            width: 100%; flex-wrap: wrap;
+            & > * { flex-basis: 25%; }
+        }
+
+        .stat {
+            white-space: nowrap;
+            span { font-size: 0.80rem; }
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .storage {
+        .group {
+            flex-wrap: wrap;
+            .name { flex: 1; }
+            .type { text-align: right; margin-bottom: 0.5rem; }
+            .stats { flex-basis: 100%; }
+            .bar {
+                flex-basis: 100%;
+                height: 20px;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+
+    .network {
+        .group {
+            .details {
+                justify-content: space-between;
+                & > * { flex-basis: 45%; }
+            }
+        }
+    }
+}

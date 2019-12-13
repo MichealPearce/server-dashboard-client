@@ -1,0 +1,17 @@
+@import '../sassy';
+
+.page {
+
+    @include flex(column);
+
+    .container {
+        @include flex(row, space-between);
+        width: 100%; flex-wrap: wrap;
+    }
+
+    .site {
+        flex-basis: 45%;
+        padding: 1rem;
+    }
+
+}

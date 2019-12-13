@@ -1,0 +1,28 @@
+@import './sassy';
+
+.pageTrans-enter {
+    opacity: 0;
+    transition: opacity 0.25s;
+    transition-delay: 0.25s;
+
+    &.pageTrans-enter-active {
+        opacity: 1;
+    }
+}
+
+.pageTrans-enter-done {
+    opacity: 1;
+}
+
+.pageTrans-exit {
+    opacity: 1;
+    transition: opacity 0.25s;
+
+    &.pageTrans-exit-active {
+        opacity: 0;
+    }
+}
+
+.pageTrans-exit-done {
+
+}
